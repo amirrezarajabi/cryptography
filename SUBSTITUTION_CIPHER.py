@@ -25,7 +25,7 @@ class Substitution_Cipher:
         print("#" + " " *(len(plaintext) + 15) +"#")
         print("#" * (len(plaintext) + 17))
         input()
-        return text
+        return text_s
     
     def decrypt(self, ciphertext):
         plain = ["_"] * len(ciphertext)

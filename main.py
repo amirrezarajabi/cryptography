@@ -1,4 +1,5 @@
 from SHIFT_CIPHER import Shift_Cipher
+from AFFINE_CIPHER import Affine_Cipher
 from SUBSTITUTION_CIPHER import Substitution_Cipher
 import os
 
@@ -38,8 +39,9 @@ def cryptosystem():
     print_logo()
     print("\n[1] Shift cipher")
     print("[2] Substitution cipher")
-    print("[3] Menu")
-    print("[4] exit")
+    print("[3] Affine cipher")
+    print("[4] Menu")
+    print("[5] exit")
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
@@ -51,8 +53,12 @@ def cryptosystem():
             sc.do()
             cryptosystem()
         elif(mode == 3):
-            menu()
+            ac = Affine_Cipher()
+            ac.do()
+            cryptosystem()
         elif(mode == 4):
+            menu()
+        elif(mode == 5):
             exit()
             break
         else:

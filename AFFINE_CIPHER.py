@@ -2,7 +2,7 @@ import sys
 import time
 import os
 
-class Shift_Cipher:
+class Affine_Cipher:
 
     def __init__(self, k=None):
         self.key = k
@@ -16,7 +16,7 @@ class Shift_Cipher:
         print("# PLAIN TEXT:  "+plaintext+" #")
         print("#" + " " *(len(plaintext) + 15) +"#")
         for i in range(len(plaintext)):
-            cipher[i] = chr((ord(plaintext[i]) - 97 + self.key ) % 26 + 97)
+            cipher[i] = chr((self.key[0] * (ord(plaintext[i]) - 97) + self.key[1] ) % 26 + 97)
             text_s = "".join(cipher)
             text_s = "# CIPHER TEXT: "+text_s + " #"
             print('\r{}'.format(text_s), end='')
@@ -36,7 +36,7 @@ class Shift_Cipher:
         print("# CIPHER TEXT: "+ciphertext+" #")
         print("#" + " " *(len(ciphertext) + 15) +"#")
         for i in range(len(ciphertext)):
-            plain[i] = chr((ord(ciphertext[i]) - 97 - self.key ) % 26 + 97)
+            plain[i] = chr((self.arca() * (ord(ciphertext[i]) - 97) - self.key[1]) % 26 + 97)
             text = "".join(plain)
             text = "# PLAIN TEXT:  "+text + " #"
             print('\r{}'.format(text), end='')
@@ -52,10 +52,22 @@ class Shift_Cipher:
         crypt = crypt.split(" ")
         crypt = "".join(crypt)
         text = input(crypt + "crypt: ")
-        k = int(input("Shift: "))
+        k = input("Key: ")
+        k = k.split(" ")
+        k[0] = int(k[0])
+        k[1] = int(k[1])
         self.key = k
         os.system('cls')
         if(crypt == "De"):
             self.decrypt(text)
         else:
             self.encrypt(text)
+
+    def arca(self):
+        a = self.key[0]
+        if(a == 1):
+            return 1
+        b = 2
+        while((a * b) % 26 != 1):
+            b += 1
+        return b
