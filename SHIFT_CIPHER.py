@@ -4,7 +4,7 @@ import os
 
 class Shift_Cipher:
 
-    def __init__(self, k):
+    def __init__(self, k=None):
         self.key = k
     
     def encrypt(self, plaintext):
@@ -46,13 +46,16 @@ class Shift_Cipher:
         print("#" * (len(ciphertext) + 17))
         input()
         return text
-    
-crypt = input("Decrypt or Encrypt (De/En): ")
-text = input(crypt + "crypt: ")
-k = int(input("Shift: "))
-os.system('cls')
-sc = Shift_Cipher(k)
-if(crypt == "De"):
-    sc.decrypt(text)
-else:
-    sc.encrypt(text)
+
+    def do(self):
+        crypt = input("Decrypt or Encrypt (De/En): ")
+        crypt = crypt.split(" ")
+        crypt = "".join(crypt)
+        text = input(crypt + "crypt: ")
+        k = int(input("Shift: "))
+        self.key = k
+        os.system('cls')
+        if(crypt == "De"):
+            self.decrypt(text)
+        else:
+            self.encrypt(text)

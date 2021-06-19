@@ -4,7 +4,7 @@ import os
 
 class Substitution_Cipher:
 
-    def __init__(self, k):
+    def __init__(self, k = None):
         self.key = k
 
     def encrypt(self, plaintext):
@@ -52,12 +52,13 @@ class Substitution_Cipher:
             return int(self.key[i])
         return int(self.key.index(str(i)))
 
-crypt = input("Decrypt or Encrypt (De/En): ")
-text = input(crypt + "crypt: ")
-k = input("Substitution: ").split(" ")
-os.system('cls')
-sc = Substitution_Cipher(k)
-if(crypt == "De"):
-    sc.decrypt(text)
-else:
-    sc.encrypt(text)
+    def do(self):
+        crypt = input("Decrypt or Encrypt (De/En): ")
+        text = input(crypt + "crypt: ")
+        k = input("Substitution: ").split(" ")
+        os.system('cls')
+        self.key = k
+        if(crypt == "De"):
+            self.decrypt(text)
+        else:
+            self.encrypt(text)
