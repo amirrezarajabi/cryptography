@@ -2,20 +2,16 @@
 
 ## cryptosystem(P, E, K, **ε**, D):
 
-###					P is a finite set of possible plaintexts;
+   ###					P is a finite set of possible plaintexts;
 
-###     		E is a finite set of possible ciphertexts;
+   ###     		E is a finite set of possible ciphertexts;
 
-### 		K is a finite set of possible keys;
+   ### 		K is a finite set of possible keys;
 
-### 		For each k ∈ K, there is an encryption rule  ek ∈  **ε**        
+   ### 		For each k ∈ K, there is an encryption rule  ek ∈  **ε**        
 
-### corresponding decryption rule  dk ∈  D. each ek: P**→** E
+   ### corresponding decryption rule  dk ∈  D. each ek: P**→** E
 
-### 		and dk: E **→** P are functions such that :
+   ### 		and dk: E **→** P are functions such that : `d_k(e_k(x)) = x`
 
-$$
-d_k(e_k(x)) = x
-$$
-
-###  			for every element plain text x ∈ P.
+   ###  			for every element plain text x ∈ P.
