@@ -20,7 +20,7 @@ def menu():
     print("[2] Solve a cryptography")
     print("[3] Exit")
     while(1):
-        mode = int(input(">>>"))
+        mode = int(input(">>> "))
         if(mode == 1):
             cryptosystem()
             break
@@ -41,7 +41,7 @@ def cryptosystem():
     print("[3] Menu")
     print("[4] exit")
     while(1):
-        mode = int(input(">>>"))
+        mode = int(input(">>> "))
         if(mode == 1):
             sc = Shift_Cipher()
             sc.do()
