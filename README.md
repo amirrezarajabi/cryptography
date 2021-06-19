@@ -40,3 +40,13 @@
     * for K = (a, b) ∈ K, define: `e_k(x) = (ax + b) % 26` and `d_k(y) = arca(y - b)`
     
     * example: `wewillmeetatmidnight` and `k = 1 11` encrypt to `hphtwwxppelextoytrse`
+
+* ### [Vigenere Cipher](https://github.com/amirrezarajabi/cryptography/blob/main/cryptography_methods/VIGENERE_CIPHER.py)
+  
+    * P = E = K = [0:26] ^ m
+    
+    * k = (k1, k2, k3, ..., km) ∈ K 
+
+    * for k ∈ K, define: `e_k(x1, x2, ..., xm) = (x1, x2, ..., xm) + (k1, k2, k3, ..., km) % 26` and `d_k(y1, y2, ..., ym) = (y1, y2, ..., ym) - (k1, k2, k3, ..., km) % 26`
+    
+    * example: `thiscryptosystemisnotsecure` and `k = cipher` encrypt to `vpxzgiaxivwpubttmjpwizitwzt`
