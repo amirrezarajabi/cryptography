@@ -1,6 +1,6 @@
-from SHIFT_CIPHER import Shift_Cipher
-from AFFINE_CIPHER import Affine_Cipher
-from SUBSTITUTION_CIPHER import Substitution_Cipher
+from cryptography_methods.SHIFT_CIPHER import Shift_Cipher
+from cryptography_methods.AFFINE_CIPHER import Affine_Cipher
+from cryptography_methods.SUBSTITUTION_CIPHER import Substitution_Cipher
 import os
 
 def print_logo():
