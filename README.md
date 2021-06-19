@@ -13,11 +13,10 @@
  
  ## Cryptography methods
  
- * ### [Shift Cipher](https://github.com/amirrezarajabi/cryptography/blob/main/SHIFT_CIPHER.py)
+  * ### [Shift Cipher](https://github.com/amirrezarajabi/cryptography/blob/main/SHIFT_CIPHER.py)
  
-  * P = E = K = [0:26]
+    * P = E = K = [0:26]
  
-  * for k in K define: `e_k(x) = (x + k) % 26` and `d_k(y) = (y - k) % 26`
+    * for k in K define: `e_k(x) = (x + k) % 26` and `d_k(y) = (y - k) % 26`
  
-  * example: `wewillmeetatmidnight` and `k = 11` encrypt to `hphtwwxppelextoytrse`
- 
+    * example: `wewillmeetatmidnight` and `k = 11` encrypt to `hphtwwxppelextoytrse`
