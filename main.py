@@ -1,6 +1,7 @@
 from cryptography_methods.SHIFT_CIPHER import Shift_Cipher
 from cryptography_methods.AFFINE_CIPHER import Affine_Cipher
 from cryptography_methods.SUBSTITUTION_CIPHER import Substitution_Cipher
+from cryptography_methods.VIGENERE_CIPHER import Vigenere_Cipher
 import os
 
 def print_logo():
@@ -40,8 +41,9 @@ def cryptosystem():
     print("\n[1] Shift cipher")
     print("[2] Substitution cipher")
     print("[3] Affine cipher")
-    print("[4] Menu")
-    print("[5] exit")
+    print("[4] Vigenere cipher")
+    print("[5] Menu")
+    print("[6] exit")
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
@@ -57,8 +59,12 @@ def cryptosystem():
             ac.do()
             cryptosystem()
         elif(mode == 4):
-            menu()
+            vc = Vigenere_Cipher()
+            vc.do()
+            cryptosystem()
         elif(mode == 5):
+            menu()
+        elif(mode == 6):
             exit()
             break
         else:
