@@ -31,7 +31,7 @@
     
     * example: `wewillmeetatmidnight` and `k = 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 0 1 2 3 4 5 6 7 8 9 10` encrypt to `hphtwwxppelextoytrse`
   
-  * ### [Substitution Cipher](https://github.com/amirrezarajabi/cryptography/blob/main/cryptography_methods/AFFINE_CIPHER.py)
+  * ### [Affine Cipher](https://github.com/amirrezarajabi/cryptography/blob/main/cryptography_methods/AFFINE_CIPHER.py)
   
     * P = E = [0:26]
     
