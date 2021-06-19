@@ -36,7 +36,7 @@ class Affine_Cipher:
         print("# CIPHER TEXT: "+ciphertext+" #")
         print("#" + " " *(len(ciphertext) + 15) +"#")
         for i in range(len(ciphertext)):
-            plain[i] = chr((self.arca() * (ord(ciphertext[i]) - 97) - self.key[1]) % 26 + 97)
+            plain[i] = chr((self.arca() * (ord(ciphertext[i]) - 97 - self.key[1])) % 26 + 97)
             text = "".join(plain)
             text = "# PLAIN TEXT:  "+text + " #"
             print('\r{}'.format(text), end='')
