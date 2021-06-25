@@ -4,7 +4,9 @@ from cryptography_methods.SUBSTITUTION_CIPHER import Substitution_Cipher
 from cryptography_methods.VIGENERE_CIPHER import Vigenere_Cipher
 import os
 
-LANGUAGE = "abcdefghijklmnopqrstuvwxyz"
+class L:
+    def __init__(self):
+        self.LANGUAGE = "abcdefghijklmnopqrstuvwxyz"
 SPEED = 1.5
 
 def print_logo():
@@ -54,19 +56,19 @@ def cryptosystem():
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
-            sc = Shift_Cipher(SPEED, LANGUAGE)
+            sc = Shift_Cipher(SPEED, lg.LANGUAGE)
             sc.do()
             cryptosystem()
         elif(mode == 2):
-            sc = Substitution_Cipher(SPEED, LANGUAGE)
+            sc = Substitution_Cipher(SPEED, lg.LANGUAGE)
             sc.do()
             cryptosystem()
         elif(mode == 3):
-            ac = Affine_Cipher(SPEED, LANGUAGE)
+            ac = Affine_Cipher(SPEED, lg.LANGUAGE)
             ac.do()
             cryptosystem()
         elif(mode == 4):
-            vc = Vigenere_Cipher(SPEED, LANGUAGE)
+            vc = Vigenere_Cipher(SPEED, lg.LANGUAGE)
             vc.do()
             cryptosystem()
         elif(mode == 5):
@@ -104,30 +106,38 @@ def settings():
 def languages():
     os.system("cls")
     print_logo()
-    print("\n[1] Add to default language(" + LANGUAGE + ")")
+    print("\n[1] Add to default language")
     print("[2] Set language")
+    print("[3] Persian")
     print("[4] Settings")
-    print("[4] Menu")
-    print("[5] exit")
+    print("[5] Menu")
+    print("[6] exit")
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
-            LANGUAGE += input("Characters to add "+ LANGUAGE +" without space: ")
+            print("Alphabet is "+lg.LANGUAGE)
+            LL = input("Characters to add without space: ")
+            lg.LANGUAGE = lg.LANGUAGE + LL
             settings()
             break
         elif(mode == 2):
-            LANGUAGE = input("Set Language: ")
+            lg.LANGUAGE = input("Set Language: ")
             languages()
             break
-        elif(mode == 4):
-            menu()
-            break
         elif(mode == 3):
-            settings()
+            lg.LANGUAGE = "ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهي"
+            languages()
             break
         elif(mode == 5):
+            menu()
+            break
+        elif(mode == 4):
+            settings()
+            break
+        elif(mode == 6):
             exit()
             break
         else:
             print("invalid choose")
+lg = L()
 menu()
