@@ -4,6 +4,9 @@ from cryptography_methods.SUBSTITUTION_CIPHER import Substitution_Cipher
 from cryptography_methods.VIGENERE_CIPHER import Vigenere_Cipher
 import os
 
+LANGUAGE = "abcdefghijklmnopqrstuvwxyz"
+SPEED = 1.5
+
 def print_logo():
     print("""
         ___                 _                                       ____       ______   
@@ -20,7 +23,8 @@ def menu():
     print_logo()
     print("\n[1] Do cryptography")
     print("[2] Solve a cryptography")
-    print("[3] Exit")
+    print("[3] Settings")
+    print("[4] Exit")
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
@@ -30,6 +34,9 @@ def menu():
             exit()
             break
         elif(mode == 3):
+            settings()
+            break
+        elif(mode == 4):
             exit()
             break
         else:
@@ -47,24 +54,78 @@ def cryptosystem():
     while(1):
         mode = int(input(">>> "))
         if(mode == 1):
-            sc = Shift_Cipher()
+            sc = Shift_Cipher(SPEED, LANGUAGE)
             sc.do()
             cryptosystem()
         elif(mode == 2):
-            sc = Substitution_Cipher()
+            sc = Substitution_Cipher(SPEED, LANGUAGE)
             sc.do()
             cryptosystem()
         elif(mode == 3):
-            ac = Affine_Cipher()
+            ac = Affine_Cipher(SPEED, LANGUAGE)
             ac.do()
             cryptosystem()
         elif(mode == 4):
-            vc = Vigenere_Cipher()
+            vc = Vigenere_Cipher(SPEED, LANGUAGE)
             vc.do()
             cryptosystem()
         elif(mode == 5):
             menu()
         elif(mode == 6):
+            exit()
+            break
+        else:
+            print("invalid choose")
+
+def settings():
+    os.system("cls")
+    print_logo()
+    print("\n[1] Delay")
+    print("[2] Language")
+    print("[3] Menu")
+    print("[4] exit")
+    while(1):
+        mode = int(input(">>> "))
+        if(mode == 1):
+            SPEED = float(input("Delay (default delay is 1.5): "))
+            settings()
+            break
+        elif(mode == 2):
+            languages()
+            break
+        elif(mode == 3):
+            menu()
+        elif(mode == 4):
+            exit()
+            break
+        else:
+            print("invalid choose")
+
+def languages():
+    os.system("cls")
+    print_logo()
+    print("\n[1] Add to default language(" + LANGUAGE + ")")
+    print("[2] Set language")
+    print("[4] Settings")
+    print("[4] Menu")
+    print("[5] exit")
+    while(1):
+        mode = int(input(">>> "))
+        if(mode == 1):
+            LANGUAGE += input("Characters to add "+ LANGUAGE +" without space: ")
+            settings()
+            break
+        elif(mode == 2):
+            LANGUAGE = input("Set Language: ")
+            languages()
+            break
+        elif(mode == 4):
+            menu()
+            break
+        elif(mode == 3):
+            settings()
+            break
+        elif(mode == 5):
             exit()
             break
         else:
