@@ -8,6 +8,7 @@ class L:
     def __init__(self):
         self.LANGUAGE = "abcdefghijklmnopqrstuvwxyz"
 SPEED = 1.5
+DELAY = 0.1
 
 def print_logo():
     print("""
